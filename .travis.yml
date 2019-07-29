@@ -21,6 +21,7 @@ matrix:
         - sudo dpkg -i bazel_0.28.1-linux-x86_64.deb
         - rm bazel_0.28.1-linux-x86_64.deb
         - sudo pip install --upgrade setuptools --user
+        - sudo pip install feedparser
         - wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 
       script:
