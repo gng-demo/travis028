@@ -324,6 +324,26 @@ load("@pip_grpcio//:requirements.bzl", pip_grpcio_install = "pip_install")
 
 pip_grpcio_install()
 
+# Fetch rules_nodejs
+http_archive(
+		    name = "build_bazel_rules_nodejs",
+		        sha256 = "7c4a690268be97c96f04d505224ec4cb1ae53c2c2b68be495c9bd2634296a5cd",
+			    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.34.0/rules_nodejs-0.34.0.tar.gz"],
+			    )
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
+# NOTE: this rule installs nodejs, npm, and yarn, but does NOT install
+# your npm dependencies into your node_modules folder.
+# You must still run the package manager to do this.
+node_repositories(package_json = ["//laoner:package.json"])
+# Setup Bazel managed npm dependencies with the `yarn_install` rule.
+# The name of this rule should be set to `npm` so that `ts_library` and `ts_web_test_suite`
+# can find your npm dependencies by default in the `@npm` workspace. You may
+# also use the `npm_install` rule with a `package-lock.json` file if you prefer.
+# See https://github.com/bazelbuild/rules_nodejs#dependencies for more info.
+
+
+
 http_archive(
     name = "mock_archive",
     build_file = "//third_party:mock.BUILD",
