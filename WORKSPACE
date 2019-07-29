@@ -346,11 +346,9 @@ node_repositories(package_json = ["//laoner:package.json"])
 http_archive(
     name = "mock_archive",
     build_file = "//third_party:mock.BUILD",
-    sha256 = "b839dd2d9c117c701430c149956918a423a9863b48b09c90e30a6013e7d2f44f",
-    strip_prefix = "mock-1.0.1",
-    urls = [
-        "http://mirror.bazel.build/pypi.python.org/packages/a2/52/7edcd94f0afb721a2d559a5b9aae8af4f8f2c79bc63fdbe8a8a6c9b23bbe/mock-1.0.1.tar.gz",
-        "https://pypi.python.org/packages/a2/52/7edcd94f0afb721a2d559a5b9aae8af4f8f2c79bc63fdbe8a8a6c9b23bbe/mock-1.0.1.tar.gz",
+    sha256 = "83657d894c90d5681d62155c82bda9c1187827525880eda8ff5df4ec813437c3",
+    strip_prefix = "mock-3.0.5",
+    urls = ["https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz",
     ],
 )
 
