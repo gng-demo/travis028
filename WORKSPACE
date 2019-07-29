@@ -259,10 +259,9 @@ http_archive(
 http_archive(
     name = "httplib2_archive",
     build_file = "//third_party:httplib2.BUILD",
-    sha256 = "e404d3b7bd86c1bc931906098e7c1305d6a3a6dcef141b8bb1059903abb3ceeb",
-    strip_prefix = "httplib2-0.10.3/python2",
-    urls = [
-        "https://pypi.python.org/packages/e4/2e/a7e27d2c36076efeb8c0e519758968b20389adf57a9ce3af139891af2696/httplib2-0.10.3.tar.gz",
+    sha256 = "6901c8c0ffcf721f9ce270ad86da37bc2b4d32b8802d4a9cec38274898a64044",
+    strip_prefix = "httplib2-0.13.1/python2",
+    urls = ["https://files.pythonhosted.org/packages/78/23/bb9606e87a66fd8c72a2b1a75b049d3859a122bc2648915be845bc44e04f/httplib2-0.13.1.tar.gz",
     ],
 )
 
